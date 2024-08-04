@@ -1,4 +1,4 @@
-import 'package:maybe_app/domain/entities/message.dart';
+import 'package:zeno_sama/domain/entities/message.dart';
 
 class YesNoModel {
   final String answer;

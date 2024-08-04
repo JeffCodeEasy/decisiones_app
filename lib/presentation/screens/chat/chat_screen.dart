@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:maybe_app/domain/entities/message.dart';
-import 'package:maybe_app/presentation/providers/chat_provider.dart';
-import 'package:maybe_app/presentation/widgets/chat/her_message_bubble.dart';
-import 'package:maybe_app/presentation/widgets/chat/my_message_bubble.dart';
-import 'package:maybe_app/presentation/widgets/shared/message_field_box.dart';
+import 'package:zeno_sama/domain/entities/message.dart';
+import 'package:zeno_sama/presentation/providers/chat_provider.dart';
+import 'package:zeno_sama/presentation/widgets/chat/her_message_bubble.dart';
+import 'package:zeno_sama/presentation/widgets/chat/my_message_bubble.dart';
+import 'package:zeno_sama/presentation/widgets/shared/message_field_box.dart';
 import 'package:provider/provider.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -17,10 +17,10 @@ class ChatScreen extends StatelessWidget {
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-                'https://celebmafia.com/wp-content/uploads/2019/02/sydney-sweeney-big-time-adolescence-portrait-session-at-sundance-film-festival-4.jpg'),
+                'https://pm1.narvii.com/6434/14f9b60d8e5c91f83c102fa09be9bd16c0753ac9_hq.jpg'),
           ),
         ),
-        title: const Text('Mi amor 🖤'),
+        title: const Text('Zeno-sama 👑'),
       ),
       body: _ChatView(),
     );
@@ -44,7 +44,9 @@ class _ChatView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final message = chatProvider.messageList[index];
                   return (message.fromWho == FromWho.hers)
-                      ? HerMessageBubble(message: message,)
+                      ? HerMessageBubble(
+                          message: message,
+                        )
                       : MyMessageBubble(
                           message: message,
                         );

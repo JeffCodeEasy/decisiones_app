@@ -22,9 +22,11 @@ class MessageFieldBox extends StatelessWidget {
       suffixIcon: IconButton(
         icon: const Icon(Icons.send_outlined),
         onPressed: () {
-          final textValue = textController.value.text;
-          onValue(textValue);
-          textController.clear();
+          final textValue = textController.text;
+          if (textValue.trim().isNotEmpty) {
+            textController.clear();
+            onValue(textValue.trim());
+          }
         },
       ),
     );
@@ -37,9 +39,11 @@ class MessageFieldBox extends StatelessWidget {
       controller: textController,
       decoration: inputDecoration,
       onFieldSubmitted: (value) {
-        onValue(value);
-        textController.clear();
-        focusNode.requestFocus();
+        if (value.trim().isNotEmpty) {
+          textController.clear();
+          focusNode.requestFocus();
+          onValue(value.trim());
+        }
       },
     );
   }

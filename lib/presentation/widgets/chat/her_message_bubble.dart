@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maybe_app/domain/entities/message.dart';
+import 'package:zeno_sama/domain/entities/message.dart';
 
 class HerMessageBubble extends StatelessWidget {
   final Message message;
@@ -59,8 +59,7 @@ class _ImageBubble extends StatelessWidget {
             width: size.width * 0.7,
             height: 150,
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-            // ignore: prefer_const_constructors
-            child: Text('Mi Amor Está enviando mensaje'),
+            child: const Text('Zeno_sama Está enviando mensaje'),
           );
         },
       ),
